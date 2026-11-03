@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071c47">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Boca 360">
+  <meta name="description" content="Boca 360°: resultados, próximos partidos, posiciones, plantel y noticias del Xeneize. App no oficial de hinchas.">
+  <meta property="og:title" content="Boca 360° · Todo Boca en un lugar">
+  <meta property="og:description" content="Partidos, posiciones, plantel, novedades e historia del Xeneize.">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
+  <link rel="apple-touch-icon" href="./assets/icon-192.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./assets/app.css">
+  <title>Boca 360° · El mundo xeneize</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Boca 360, inicio"><img src="./assets/icon.svg" alt="Escudo estilizado CABJ" width="45" height="51"><span><strong>BOCA <em>360°</em></strong><small>EL MUNDO XENEIZE</small></span></a>
+      <div class="head-actions">
+        <span id="freshness-pill" class="fresh-pill"><i class="status-dot"></i> Datos iniciales</span>
+        <button id="refresh-btn" class="icon-btn" type="button" aria-label="Comprobar actualizaciones" title="Comprobar actualizaciones"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.2 5.5M20 4v7h-7"/></svg></button>
+      </div>
+    </header>
+    <nav class="desktop-nav" aria-label="Secciones principales" id="desktop-nav"></nav>
+    <main id="app-content" tabindex="-1"><div class="loading">Cargando el mundo xeneize...</div></main>
+    <footer class="footer">BOCA 360° · Hecha para hinchas · <span id="foot-date">Datos de referencia: 02/11/2026</span><br>Proyecto independiente, no afiliado a Boca Juniors. Datos deportivos de terceros sujetos a disponibilidad.</footer>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación de la aplicación"></nav>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./assets/seed.js"></script>
+  <script src="./assets/app.js" defer></script>
+</body>
+</html>
