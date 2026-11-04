@@ -126,7 +126,7 @@ function go(page){if(!PAGES.some(p=>p[0]===page))page='inicio';state.page=page;r
 async function refresh(silent=false){
  const button=$('#refresh-btn');button.disabled=true;
  try{
-  const response=await fetch(`./data/boca.json?t=${Date.now()}`,{cache:'no-store'});
+const response = await fetch(`./boca.json?t=${Date.now()}`, {cache:'no-store'});
   if(!response.ok)throw new Error('Sin datos disponibles');
   const fresh=await response.json();if(!fresh||!Array.isArray(fresh.matches)||!fresh.meta)throw new Error('Formato inválido');
   const changed=JSON.stringify(fresh)!==JSON.stringify(data);data=fresh;render();if(!silent)toast(changed?'Información recargada':'Ya tenés la última versión disponible');
