@@ -1,0 +1,35 @@
+
+name: Actualizar datos Boca 360
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Actualizar datos deportivos
+        run: python update_data.py
+
+      - name: Guardar datos actualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add boca.json seed.js
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualizar datos Boca 360"
+            git push
+          fi
