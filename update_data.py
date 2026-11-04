@@ -20,9 +20,9 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 BASE = 'https://site.api.espn.com/apis/site/v2/sports/soccer'
-ROOT = pathlib.Path(__file__).resolve().parents[1]
-DATA_PATH = ROOT / 'data' / 'boca.json'
-SEED_PATH = ROOT / 'assets' / 'seed.js'
+ROOT = pathlib.Path(__file__).resolve().parent
+DATA_PATH = ROOT / 'boca.json'
+SEED_PATH = ROOT / 'seed.js'
 TEAM_ID = '5'  # Confirmed for Boca Juniors on ESPN's arg.1 teams feed
 LEAGUES = {
     'arg.1': 'Liga Profesional',
